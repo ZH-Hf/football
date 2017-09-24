@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="css/swiper-3.4.2.min.css" />
+		<link rel="stylesheet" href="css/animation.min.css" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="lib/requirejs/require.js" data-main="js/self-center"></script>
+		<script>
+			(function(doc, win) {
+				var docEl = doc.documentElement,
+					// orientationchange 事件 用来监听手机屏幕的反转
+					resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+					recalc = function() {
+						var clientWidth = docEl.clientWidth; //(window.innerWidth);UC 或者QQ 安卓4.0 以下原生浏览器下面是没有
+						if (!clientWidth) return;
+						docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+						console.log(clientWidth);
+					};
+				if (!doc.addEventListener) return;
+				win.addEventListener(resizeEvt, recalc, false);
+				//DOMContentLoaded dom 加载完成，onload 有什么区别 dom css js OK 才执行的
+				doc.addEventListener('DOMContentLoaded', recalc, false);
+			})(document, window);
+		</script>
+		<style type="text/css">
+			@font-face {
+				font-family: "iconfont";
+				src: url('font/iconfont/iconfont.eot');
+				/* IE9*/
+				src: url('font/iconfont/iconfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+				url('font/iconfont/iconfont.woff') format('woff'), /* chrome, firefox */
+				url('font/iconfont/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+				url('font/iconfont/iconfont.svg#iconfont') format('svg');
+				/* iOS 4.1- */
+			}
+			
+			.iconfont {
+				font-family: "iconfont" !important;
+				font-size: 16px;
+				font-style: normal;
+				-webkit-font-smoothing: antialiased;
+				-webkit-text-stroke-width: 0.2px;
+				-moz-osx-font-smoothing: grayscale;
+			}
+			
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			ul,
+			dl,
+			ol,
+			li {
+				list-style: none;
+			}
+			
+			html {
+				height: 100%;
+			}
+			
+			body {
+				font-size: 0.16rem;
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				background: #f1f1f1;
+				box-sizing: border-box;
+			}
+			
+			header {
+				width: 6.4rem;
+				height: 0.88rem;
+				line-height: 0.88rem;
+				background: #0dc441;
+				color: #fff;
+				font-size: 0.32rem;
+				font-weight: bold;
+				text-align: center;
+			}
+			
+			.main {
+				flex: 1;
+				background: #fff;
+				margin-top: 0.1rem;
+			}
+			
+			.user_info {
+				width: 100%;
+				float: left;
+			}
+			
+			.user_info img {
+				width: 0.95rem;
+				height: 0.95rem;
+				border: 1px solid #aaaaaa;
+				border-radius: 50%;
+				float: left;
+				margin-top: 0.25rem;
+				margin-left: 0.42rem;
+				margin-right: 0.2rem;
+				margin-bottom: 0.2rem;
+			}
+			
+			.main dl {
+				float: left;
+				margin-top: 0.36rem;
+			}
+			
+			.main dl dt {
+				font-size: 0.27rem;
+			}
+			
+			.main dl dd {
+				font-size: 0.22rem;
+				color: #999;
+				margin-top: 0.2rem;
+			}
+			
+			.tab {
+				float: left;
+			}
+			
+			.tab li {
+				float: left;
+			}
+			
+			footer {
+				margin-top: 0.1rem;
+				background: #fff;
+				border-top: 1px solid #d6d6d6;
+				display: flex;
+				width: 6.4rem;
+				height: 0.88rem;
+				box-sizing: border-box;
+				color: #d2d1d0;
+			}
+			
+			footer span {
+				flex: 1;
+				text-align: center;
+				padding-top: 0.1rem;
+				position: relative;
+			}
+			
+			footer>span {
+				display: inline-block;
+				font-size: 0.32rem!important;
+			}
+			
+			footer>span>p {
+				font-size: 0.23rem;
+			}
+			
+			.active {
+				color: #0dc441;
+			}
+			
+			footer span:nth-of-type(3) {
+				position: relative;
+			}
+			
+			footer span:nth-of-type(3) b {
+				display: block;
+				text-align: center;
+				line-height: 1.05rem;
+				font-size: 0.52rem;
+				left: 0;
+				top: -0.24rem;
+				width: 1.05rem;
+				height: 1.05rem;
+				position: absolute;
+				border: 1px solid #d6d6d6;
+				border-radius: 50%;
+				background: #fff;
+				position: absolute;
+			}
+			
+			.swiper-pagination {
+				display: flex;
+				width: 100%;
+				height: 0.72rem;
+				border-bottom: 1px solid #d9d9d9;
+				background: #FFFFFF;
+			}
+			
+			.pageItem {
+				flex: 1;
+				line-height: 0.7rem;
+				height: 0.7rem;
+				text-align: center;
+				color: #666666;
+				font-size: 0.28px;
+			}
+			
+			.pActive {
+				color: #0dc441;
+				border-bottom: 2px solid #0dc441;
+			}
+			
+			.swiper-slide {
+				padding-bottom: 0.88rem;
+				margin-top: 0.72rem;
+			}
+			
+			.swiper-slide dl {
+				width: 3.15rem;
+				height: 3.75rem;
+				border: 1px solid #e5e5e5;
+				margin-top: 0.1rem;
+			}
+			
+			.swiper-slide dl:nth-child(2n-1) {
+				float: right;
+			}
+			
+			.swiper-slide dl:nth-child(2n) {
+				float: left;
+			}
+			
+			.swiper-slide dl dt img {
+				width: 3.15rem;
+				height: 3.15rem;
+			}
+			
+			.swiper-slide dl dd {
+				font-size: 0.25rem;
+				text-indent: 0.2rem;
+				height: 0.58rem;
+				line-height: 0.5rem;
+			}
+			
+			.swiper-slide:nth-child(1) {
+				height: auto;
+			}
+			
+			.swiper-slide:nth-child(2) {
+				height: auto;
+			}
+			
+			.swiper-slide:nth-child(3) {
+				height: auto;
+			}
+			
+			.swiper-slide:nth-child(1) img {
+				height: 3.15rem;
+				width: 3.15rem;
+			}
+			
+			.container {
+				overflow-y: auto;
+				width: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header>
+			个人中心
+		</header>
+		<div class="main">
+			<div class="user_info">
+				<img src="img/pic_4.jpg" alt="" />
+				<dl>
+					<dt>我叫小萌</dt>
+					<dd>我是小萌我怕谁啊!哈哈哈!</dd>
+				</dl>
+
+			</div>
+			<div class="container">
+				<div class="swiper-pagination"></div>
+				<div class="swiper-container" id="swipe_one">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<img src="img/pic_7.jpg" />
+						</div>
+						<div class="swiper-slide">
+
+						</div>
+						<div class="swiper-slide">
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+			<footer>
+				<span class="icon iconfont" id="index">&#xe60c;<p >首页</p></span>
+				<span class="icon iconfont" id="find">&#xe60d;<p >发现</p></span>
+				<span class="icon iconfont"><b>&#xe618;</b></span>
+				<span class="icon iconfont active">&#xe603;<p>我的</p></span>
+				<span class="icon iconfont">&#xe601;<p>退出</p></span>
+			</footer>
+	</body>
+</html>

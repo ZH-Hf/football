@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="lib/requirejs/require.js" data-main="js/register"></script>
+		<script>
+			(function(doc, win) {
+				var docEl = doc.documentElement,
+					// orientationchange 事件 用来监听手机屏幕的反转
+					resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+					recalc = function() {
+						var clientWidth = docEl.clientWidth; //(window.innerWidth);UC 或者QQ 安卓4.0 以下原生浏览器下面是没有
+						if(!clientWidth) return;
+						docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+						console.log(clientWidth);
+					};
+				if(!doc.addEventListener) return;
+				win.addEventListener(resizeEvt, recalc, false);
+				//DOMContentLoaded dom 加载完成，onload 有什么区别 dom css js OK 才执行的
+				doc.addEventListener('DOMContentLoaded', recalc, false);
+			})(document, window);
+		</script>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			html,
+			body {
+				font-size: 0.16rem;
+			}
+			
+			header {
+				width: 6.4rem;
+				height: 0.88rem;
+				line-height: 0.88rem;
+				background: #0dc441;
+				color: #fff;
+				font-size: 0.32rem;
+				font-weight: bolder;
+				text-align: center;
+			}
+			table{
+				width: 5.8rem;
+				margin: 0.3rem 0 0 0.3rem;
+			}
+			td{
+				padding-bottom: 0.55rem;
+				position: relative;
+			}
+			.loginNum,.password,.nickname{
+				width: 5.8rem;
+				height: 0.66rem;
+				border: 0;
+				border-bottom: 0.01rem solid #7f7f7f;
+				outline: 0;
+				font-size: 0.26rem;
+			}
+			.toReg{
+				font-size: 0.25rem;
+				color: #999999;
+			}
+			.toReg a{
+				color: #a3e9b7;
+			}
+			.submit button{
+				border: 0;
+				height: 0.88rem;
+				line-height: 0.88rem;
+				background: #0dc441;
+				outline: 0;
+				width: 5.8rem;
+				border-radius: 0.1rem;
+				color: #fff;
+				font-size: 0.32rem;
+			}
+			.warn{
+				position: absolute;
+				right: 0;
+				line-height: 0.66rem;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header>
+			足球圈——注册
+		</header>
+		<section>
+			<table cellpadding="0" cellspacing="0">
+				<tr>
+					<td><input type="text" placeholder="手机号" class="loginNum" value="15608061260"/><span class="warn_login"></span></td>
+				</tr>
+				<tr>
+					<td><input type="password" placeholder="密码(6-16位：可用数字、字母、下划线)" class="password" value="yumojie"/><span class="warn_pwd"></span></td>
+				</tr>
+				<tr>
+					<td><input type="text" placeholder="昵称" class="nickname" value="张三"/><span class="warn_nkm" ></span></td>
+				</tr>
+				<tr>
+					<td class="submit"><button id="btn">提&nbsp;&nbsp;&nbsp;&nbsp;交</button></td>
+				</tr>
+			</table>
+
+		</section>
+		<footer></footer>
+	</body>
+
+</html>

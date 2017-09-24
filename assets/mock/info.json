@@ -1,0 +1,30 @@
+[
+	{
+		"live":[
+			{"id":1,"imgSrc":"img/pic_1.jpg","desc":"小丸子啊小丸子"},
+			{"id":2,"imgSrc":"img/pic_8.jpg","desc":"萌萌哒小丸子"},
+			{"id":3,"imgSrc":"img/pic_9.jpg","desc":"睡觉小丸子"},
+			{"id":4,"imgSrc":"img/pic_1.jpg","desc":"小丸子啊小丸子"},
+			{"id":5,"imgSrc":"img/pic_8.jpg","desc":"萌萌哒小丸子"},
+			{"id":6,"imgSrc":"img/pic_9.jpg","desc":"睡觉小丸子"}
+		],
+		"life":[
+			{"id":1,"imgSrc":"img/pic_2.jpg","desc":"徐云龙争顶"},
+			{"id":2,"imgSrc":"img/pic_10.jpg","desc":"马季奇向裁判示意对手拉扯"},
+			{"id":3,"imgSrc":"img/pic_2.jpg","desc":"徐云龙争顶"},
+			{"id":4,"imgSrc":"img/pic_10.jpg","desc":"马季奇向裁判示意对手拉扯"},
+			{"id":5,"imgSrc":"img/pic_2.jpg","desc":"徐云龙争顶"},
+			{"id":6,"imgSrc":"img/pic_10.jpg","desc":"马季奇向裁判示意对手拉扯"}
+		],
+		"beauty":[
+			{"id":1,"imgSrc":"img/pic_3.jpg","desc":"美女"},
+			{"id":2,"imgSrc":"img/pic_3.jpg","desc":"美女"},
+			{"id":3,"imgSrc":"img/pic_3.jpg","desc":"美女"},
+			{"id":4,"imgSrc":"img/pic_3.jpg","desc":"美女"},
+			{"id":5,"imgSrc":"img/pic_3.jpg","desc":"美女"},
+			{"id":6,"imgSrc":"img/pic_3.jpg","desc":"美女"}
+			
+		]
+	}
+	
+]

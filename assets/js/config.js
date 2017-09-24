@@ -1,0 +1,12 @@
+require.config({
+	baseUrl:"./",
+	paths:{
+		"zepto":"js/zepto.min",
+		"tap":"js/zepto.tap",
+		"template":"lib/arttemplate/template-web",
+		"animation":"js/swipe.animation.min",
+		"min":"js/swiper-3.4.2.min",
+		"jquery":"lib/jquery/jquery-1.12.4.min",
+		"iscroll":"js/iscroll-probe"
+	}
+})
